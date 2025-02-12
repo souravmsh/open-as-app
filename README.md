@@ -120,9 +120,3 @@ If you want to remove the extension:
     
 
 * * *
-
-This manual provides all necessary details for users to install, use, and troubleshoot the extension effectively. 🚀
-
-Ask ChatGPT
-
-Ask ChatGPT
