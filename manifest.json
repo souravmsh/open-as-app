@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Open As App by CodeKernel",
+  "version": "1.0",
+  "description": "Launches my website like a chrome app.",
+  "icons": {
+    "16": "icons/16.png",
+    "24": "icons/24.png",
+    "32": "icons/32.png",
+    "48": "icons/48.png",
+    "128": "icons/128.png"
+  },
+  "permissions": ["storage", "tabs", "windows", "notifications"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Open As App by CodeKernel"
+  }
+}
