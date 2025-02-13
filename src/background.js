@@ -7,7 +7,7 @@ chrome.action.onClicked.addListener((tab) => {
         if (!/^https?:\/\//.test(tab.url)) {
             chrome.notifications.create({
                 type: "basic",
-                iconUrl: "icons/48.png",
+                iconUrl: "assets/icons/48.png",
                 title: "Invalid Page",
                 message: "This is not a valid web page URL.",
             });
