@@ -1,4 +1,4 @@
-// Track URLs for each popup window
+// Track URLs and original tab positions for each popup window
 let popupWindows = {};
 
 chrome.action.onClicked.addListener((tab) => {
@@ -14,6 +14,9 @@ chrome.action.onClicked.addListener((tab) => {
             return;
         }
 
+        // Save the original tab index before opening the popup
+        const originalTabIndex = tab.index;
+
         // Open a new popup window with the current tab's URL
         chrome.windows.create({
             url: tab.url,
@@ -22,8 +25,8 @@ chrome.action.onClicked.addListener((tab) => {
             height: 800
         }, (newWindow) => {
             if (newWindow) {
-                // Save the opened website window ID and its URL
-                popupWindows[newWindow.id] = { url: tab.url };
+                // Save the opened website window ID, its URL, and the original tab index
+                popupWindows[newWindow.id] = { url: tab.url, originalTabIndex };
                 // Close the current tab
                 chrome.tabs.remove(tab.id);
             }
@@ -44,8 +47,10 @@ chrome.tabs.onUpdated.addListener((tabId, changeInfo, tab) => {
 // Listen for window close events
 chrome.windows.onRemoved.addListener((windowId) => {
     if (popupWindows[windowId]) {
-        // Reopen the tab with the stored URL
-        chrome.tabs.create({ url: popupWindows[windowId].url, active: true });
+        const { url, originalTabIndex } = popupWindows[windowId];
+
+        // Reopen the tab with the stored URL at its original position
+        chrome.tabs.create({ url, index: originalTabIndex, active: true });
 
         // Remove the closed window from the tracking object
         delete popupWindows[windowId];
