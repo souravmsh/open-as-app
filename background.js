@@ -21,8 +21,8 @@ chrome.action.onClicked.addListener((tab) => {
         chrome.windows.create({
             url: tab.url,
             type: "popup",
-            width: 1200,
-            height: 800
+            width: 980,
+            height: 670
         }, (newWindow) => {
             if (newWindow) {
                 // Save the opened website window ID, its URL, and the original tab index
