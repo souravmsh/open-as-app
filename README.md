@@ -1,6 +1,5 @@
 # Open As App by CodeKernel
 
-**Version:** 1.0  
 **Description:** A Chrome extension that allows you to launch any website as a standalone app in a popup window. Save, manage, and quickly access your favorite websites with ease.
 
 ---
