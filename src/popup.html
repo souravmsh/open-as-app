@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open As App by CodeKernel</title>
+    <link href="styles.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>🔗 Open As App by CodeKernel</h1>
+
+        <div id="alertMessage" class="alert" style="display: none; font-weight: bold;"></div>
+
+        <div class="form-group mb-3">
+            <label for="websiteUrl">Enter Website URL</label>
+            <input type="text" id="websiteUrl" placeholder="https://example.com">
+        </div>
+
+        <button id="saveWebsite" class="btn">➕ Save Website</button>
+
+        <div class="form-group mb-3">
+            <label for="websiteList">Saved Websites</label>
+            <select id="websiteList"></select>
+        </div>
+
+        <div class="button-group">
+            <button id="openButton" class="btn">✅ Open Now!</button>
+            <button id="deleteButton" class="btn btn-danger">🗑 Delete All</button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+</html>

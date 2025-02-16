@@ -3,18 +3,17 @@
   "name": "Open As App by CodeKernel",
   "version": "1.0",
   "description": "Launches my website like a Chrome app.",
-  "homepage_url": "https://codekernel.net",
   "icons": {
-    "16": "assets/icons/16.png",
-    "24": "assets/icons/24.png",
-    "32": "assets/icons/32.png",
-    "48": "assets/icons/48.png",
-    "128": "assets/icons/128.png"
+    "16": "static/icons/16.png",
+    "24": "static/icons/24.png",
+    "32": "static/icons/32.png",
+    "48": "static/icons/48.png",
+    "128": "static/icons/128.png"
   },
   "background": {
     "service_worker": "src/background.js"
   },
-  "permissions": ["storage", "tabs", "windows", "scripting", "notifications"],
+  "permissions": ["storage", "tabs", "windows", "scripting", "notifications", "contextMenus"],
   "host_permissions": [
     "https://codekernel.net/*"
   ],
