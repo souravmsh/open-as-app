@@ -9,10 +9,10 @@ chrome.runtime.onInstalled.addListener(() => {
         contexts: ["all"] // Show the context menu item in all contexts
     });    
 
-    // About CodeKernel
+    // About Us
     chrome.contextMenus.create({
-        id: "aboutCodeKernel",
-        title: "About CodeKernel",
+        id: "aboutUs",
+        title: "About Us",
         contexts: ["all"] // Show the context menu item in all contexts
     });
 
@@ -35,7 +35,7 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
             width: 600,
             height: 400
         });
-    } else if (info.menuItemId === "aboutCodeKernel") {
+    } else if (info.menuItemId === "aboutUs") {
         // Open the Developer link in a new tab
         chrome.tabs.create({
             url: 'https://codekernel.net'

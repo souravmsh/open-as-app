@@ -1,6 +1,6 @@
-# Open As App by CodeKernel
+# WebAppify
 
-**Description:** A Chrome extension that allows you to launch any website as a standalone app in a popup window. Save, manage, and quickly access your favorite websites with ease.
+A Chrome extension that allows you to launch any website as a standalone app in a popup window. Save, manage, and quickly access your favorite websites with ease.
 
 ---
 
@@ -27,7 +27,7 @@
 
 2. **Installation from Chrome Web Store (if available):**
     - Open **Chrome Web Store**.
-    - Search for **"Open As App by CodeKernel"**.
+    - Search for **"WebAppify"**.
     - Click **Add to Chrome** → **Add Extension**.
 
 ---
@@ -37,14 +37,14 @@
 ### **Opening a Website as an App**
 
 1. Navigate to any website in Chrome.
-2. Click on the **"Open As App by CodeKernel"** extension icon in the toolbar.
+2. Click on the **"WebAppify"** extension icon in the toolbar.
 3. The website will open in a **popup window** (980x670 resolution).
 4. The original tab will be closed to keep your workspace clean.
 
 ### **Save & Manage Websites**
 
 1. **Save Website**:
-    - Click the extension icon to open the popup.
+    - Click the extension icon to open the context menu then click on the Manage Websites menu.
     - Enter the URL of the website you want to save in the input field.
     - Click **Save Website**.
     - If the URL is invalid, an error message will be shown.
@@ -95,7 +95,7 @@
 ## Uninstalling the Extension
 
 1. Go to **chrome://extensions/**.
-2. Find **"Open As App by CodeKernel"**.
+2. Find **"WebAppify"**.
 3. Click **Remove** → Confirm the removal.
 
 ---

@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Open As App by CodeKernel",
+  "name": "WebAppify",
   "version": "1.0",
   "description": "Launches my website like a Chrome app.",
   "icons": {
@@ -14,11 +14,8 @@
     "service_worker": "src/background.js"
   },
   "permissions": ["storage", "tabs", "windows", "scripting", "notifications", "contextMenus"],
-  "host_permissions": [
-    "https://codekernel.net/*"
-  ],
   "action": {
-    "default_title": "Open As App by CodeKernel"
+    "default_title": "WebAppify"
   },
   "commands": {
     "_execute_action": {
