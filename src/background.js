@@ -2,27 +2,33 @@
 let popupWindows = {};
 
 chrome.runtime.onInstalled.addListener(() => {
-    // Create a context menu item
+    // Create a context menu item for opening the page as an app
     chrome.contextMenus.create({
-        id: "manageWebApp",
-        title: "Manage Websites",
-        contexts: ["all"] // Show the context menu item in all contexts
-    });    
-
-    // About Us
-    chrome.contextMenus.create({
-        id: "aboutUs",
-        title: "About Us",
+        id: "quickOpen",
+        title: "✨ Open as App", // Sweet and engaging title
         contexts: ["all"] // Show the context menu item in all contexts
     });
 
-    // Developer
+    // Create a context menu item for managing websites
+    chrome.contextMenus.create({
+        id: "manageWebApp",
+        title: "🌐 Manage Websites", // Sweet and descriptive title
+        contexts: ["all"] // Show the context menu item in all contexts
+    });
+
+    // Create a context menu item for "About Us"
+    chrome.contextMenus.create({
+        id: "aboutUs",
+        title: "📖 About Us", // Sweet and inviting title
+        contexts: ["all"] // Show the context menu item in all contexts
+    });
+
+    // Create a context menu item for "Developer"
     chrome.contextMenus.create({
         id: "developer",
-        title: "Developer",
+        title: "👨‍💻 Meet the Developer", // Sweet and personal title
         contexts: ["all"] // Show the context menu item in all contexts
-    });    
-
+    });
 });
 
 // Listen for context menu item clicks
@@ -45,10 +51,13 @@ chrome.contextMenus.onClicked.addListener((info, tab) => {
         chrome.tabs.create({
             url: 'https://github.com/souravmsh'
         });
-    }
+    } else if (info.menuItemId === "quickOpen") {
+        openPageAsApp(tab);
+    } 
 });
 
-chrome.action.onClicked.addListener((tab) => {
+
+function openPageAsApp(tab) {
     if (tab && tab.url) {
         // Validate the URL
         if (!/^https?:\/\//.test(tab.url)) {
@@ -79,6 +88,10 @@ chrome.action.onClicked.addListener((tab) => {
             }
         });
     }
+}
+
+chrome.action.onClicked.addListener((tab) => {
+    openPageAsApp(tab);
 });
 
 // Track URL changes in popup windows
